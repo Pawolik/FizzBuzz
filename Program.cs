@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tydzień_4_Zadanie_2
 {
-    struct FizzBuzz
+    class FizzBuzz
     {
         public void Rules() //objaśnienie zasad gry
         {
@@ -16,26 +16,22 @@ namespace Tydzień_4_Zadanie_2
             Console.WriteLine("Jeżeli liczba użytkownika będzie podzielna przez 3 i przez 5 jednocześnie bez reszty, to zostanie zwrócony wynik „FizzBuzz”.");
             Console.WriteLine("Jeżeli liczba użytkownika nie będzie podzielna przez 3 ani przez 5 bez reszty, to zostanie zwrócona podana liczba.");
         }
-        public void Game() //główne działanie programu
+        public string Game() //główne działanie programu
         {
             Console.WriteLine("\nPodaj Liczbę");
             int number = Choice();
+
             if (number % 15 == 0)
-            {
                 Console.WriteLine("FizzBuzz");
-            }
+
             else if (number % 5 == 0)
-            {
                 Console.WriteLine("Buzz");
-            }
+
             else if (number % 3 == 0)
-            {
                 Console.WriteLine("Fizz");
-            }
-            else
-            {
-                Console.WriteLine($"Podana liczba {number} nie jest podzielna przez 3 i/lub 5.");
-            }
+
+            return $"Podana liczba {number} nie jest podzielna przez 3 i/lub 5.";
+
         }
         public int Choice() //zabezpieczenie programu
         {
